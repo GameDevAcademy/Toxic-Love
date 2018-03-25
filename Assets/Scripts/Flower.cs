@@ -8,9 +8,11 @@ using UnityEngine;
 
 public class Flower : PlayerTrigger
 {
+    public FloatReference flowers;
+
     protected override void OnPlayerOverlap()
     {
-        GameManager.instance.AddFlower();
+        flowers.CurrentValue++;
         Destroy(gameObject);
     }
 }
