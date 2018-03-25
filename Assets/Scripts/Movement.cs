@@ -99,6 +99,9 @@ public class Movement : MonoBehaviour
 
         // Update the player's rb to move the character.
         rb.velocity = new Vector2(horizontalInput * movementSpeed * Time.deltaTime, rb.velocity.y);
+
+        // Update the player's animation according to the input.
+        anim.SetBool("Running", (Mathf.Abs(horizontalInput) > 0f));
     }
 
     private void CheckForMeshFlip(float horizontalInput)

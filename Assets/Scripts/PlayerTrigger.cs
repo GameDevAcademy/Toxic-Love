@@ -11,9 +11,11 @@ public class PlayerTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Checks if the player is the object entering the trigger.
         Movement player = collision.gameObject.GetComponent<Movement>();
         if(player != null)
         {
+            // The player overlapped the trigger.
             OnPlayerOverlap();
         }
     }
