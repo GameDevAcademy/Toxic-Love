@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d29e37a0df5935b4b8e6d19b9f6e214e, type: 3}
-  m_Name: Player Health
+  m_Name: Player HP
   m_EditorClassIdentifier: 
-  description: 
-  defaultValue: 0
+  description: The current HP of the player.
+  defaultValue: 100
