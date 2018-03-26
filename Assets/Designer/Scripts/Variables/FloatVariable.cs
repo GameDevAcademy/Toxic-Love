@@ -28,7 +28,7 @@ public class FloatVariable : ScriptableObject
 
     private void OnVariableChanged()
     {
-        Debug.Log("Variable was changed.");
+
     }
 
 

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d29e37a0df5935b4b8e6d19b9f6e214e, type: 3}
-  m_Name: PlayerMaxHp
+  m_Name: PMovement
   m_EditorClassIdentifier: 
-  description: The maximum HP of the player.
-  defaultValue: 100
+  description: Movement speed of the player.
+  defaultValue: 150

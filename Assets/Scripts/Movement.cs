@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     [Header("Movement Parameters")]
 
     [Tooltip("Movement speed of the player.")]
-    public float movementSpeed = 5f;
+    public FloatReference movementSpeed;
 
     #endregion
 
@@ -22,13 +22,13 @@ public class Movement : MonoBehaviour
     [Header("Jump Parameters")]
 
     [Tooltip("Jumping force of the player.")]
-    public float jumpForce;
+    public FloatReference jumpForce;
 
     [Tooltip("Layer mask for the objects considered ground for the player.")]
     public LayerMask whatIsGround;
 
     [Tooltip("Distance to Ground to be considered grounded.")]
-    public float groundedRadius = 3f;
+    public float groundedRadius = .3f;
 
     [Tooltip("Bonus gravity applied when in air.")]
     public float gravityBonus = 9.81f;
@@ -39,10 +39,10 @@ public class Movement : MonoBehaviour
     [Header("Jump Parameters")]
 
     [Tooltip("How much will the player bow down while crouching.")]
-    public float crouchHeight;
+    public FloatReference crouchHeight;
 
     [Tooltip("How slower is the player actually going now.")]
-    public float crouchSlow;
+    public FloatReference crouchSlow;
     #endregion
 
     #region Component
@@ -50,7 +50,7 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private CapsuleCollider2D collider;
     private Animator anim;
-    private Transform groundCheck;
+    public Transform groundCheck;
     #endregion
 
     #region Current State of the player.
@@ -62,13 +62,12 @@ public class Movement : MonoBehaviour
     #endregion
 
     #region Initialization
-    private void Start()
+    protected virtual void Start()
     {
         // Set up the components from the player.
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<CapsuleCollider2D>();
         anim = GetComponentInChildren<Animator>();
-        groundCheck = GameObject.Find("GroundCheck").transform;
     }
     #endregion
 
@@ -78,21 +77,18 @@ public class Movement : MonoBehaviour
         // Update the grounded state of the player.
         grounded = CheckIfGrounded();
 
-        // Get the input from the player.
-        float verticalInput = Input.GetAxis("Vertical");
-        float horizontalInput = Input.GetAxis("Horizontal");
+        ReadInput();
+    }
 
-        HandleMovement(horizontalInput);
-
-        HandleJump(verticalInput);
-
-        HandleCrouch(verticalInput);
+    protected virtual void ReadInput()
+    {
+        Debug.Log("Reading input.");
     }
     #endregion
 
     #region Movement
 
-    private void HandleMovement(float horizontalInput)
+    protected void HandleMovement(float horizontalInput)
     {
         // Check if a sprite flip is needed now.
         CheckForMeshFlip(horizontalInput);
@@ -132,7 +128,7 @@ public class Movement : MonoBehaviour
 
     #region Jump
 
-    private bool CheckIfGrounded()
+    protected bool CheckIfGrounded()
     {
         // Checks if there are any colliders in the radius from the player's feet on the ground layer.
         var collider = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
@@ -140,7 +136,7 @@ public class Movement : MonoBehaviour
         return (collider != null);
     }
     
-    private void HandleJump(float verticalInput)
+    protected void HandleJump(float verticalInput)
     {
         if (grounded && Input.GetButtonDown("Jump"))
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
@@ -159,7 +155,7 @@ public class Movement : MonoBehaviour
     #endregion
 
     #region Crouch
-    private void HandleCrouch(float verticalInput)
+    protected void HandleCrouch(float verticalInput)
     {
         if (Input.GetButtonDown("Crouch"))
             StartCrouch();
@@ -174,7 +170,7 @@ public class Movement : MonoBehaviour
         size.y = size.y - crouchHeight;
         collider.size = size;
 
-        movementSpeed = movementSpeed - crouchSlow;
+        movementSpeed.CurrentValue = movementSpeed.CurrentValue - crouchSlow.CurrentValue;
     }
 
     private void StopCrouch()
@@ -183,7 +179,7 @@ public class Movement : MonoBehaviour
         size.y = size.y + crouchHeight;
         collider.size = size;
 
-        movementSpeed = movementSpeed + crouchSlow;
+        movementSpeed.CurrentValue = movementSpeed.CurrentValue + crouchSlow.CurrentValue;
     }
     #endregion
 }
