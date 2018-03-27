@@ -1,17 +1,16 @@
 ﻿using UnityEngine;
 
-public class GameManager : MonoBehaviour
+/*
+ * Responsible for handling and holding all the rules of the level.
+ */
+
+public class GameManager : SoundSource
 {
     public FloatReference levelDuration;
-    private AudioSource audioS;
-
-    private void Start()
-    {
-        audioS = gameObject.AddComponent<AudioSource>();
-    }
 
     private void Update()
     {
+        // Updates the level Duration.
         levelDuration.CurrentValue -= Time.deltaTime;
     }
 }

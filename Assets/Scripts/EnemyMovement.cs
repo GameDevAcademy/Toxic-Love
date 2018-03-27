@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Responsible for moving the enemy to the player.
+ */
+
 public class EnemyMovement : Movement
 {
     public FloatReference distanceThreshold;
@@ -12,7 +16,6 @@ public class EnemyMovement : Movement
         base.Start();
         target = FindObjectOfType<PlayerMovement>().transform;
     }
-
 
     protected override void ReadInput()
     {
@@ -25,9 +28,26 @@ public class EnemyMovement : Movement
         {
             horizontalInput = (distance < 0f) ? (-1f) : (1f);
         }
+        else
+        {
+            Attack();
+        }
         
-
         HandleMovement(horizontalInput);
     }
 
+    public FloatReference playerHp;
+    public FloatReference attackDamage;
+
+    private float lastAttack = 0f;
+    private float attackSpeed = 3f;
+
+    private void Attack()
+    {
+        if (Time.time - lastAttack > attackSpeed)
+        {
+            playerHp.CurrentValue = playerHp - attackDamage;
+            lastAttack = Time.time;
+        }
+    }
 }

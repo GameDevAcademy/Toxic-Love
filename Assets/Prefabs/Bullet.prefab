@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 70053309130351274}
   - component: {fileID: 50011517036315032}
   - component: {fileID: 114503952061829738}
-  m_Layer: 0
+  - component: {fileID: 114834939051964772}
+  m_Layer: 10
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,8 +90,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9164bc1ade70d439fbc32fa510635a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
   speed: 10
+--- !u!114 &114834939051964772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1581046386324288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 750fc25548f85ea4aa87009f584fec44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackDamage:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: c13a44aefbb752e40ac7ca39cf987ea6, type: 2}
 --- !u!212 &212014305538077862
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FlowersCounter : MonoBehaviour
+public class FlowersCounter : SoundSource
 {
     public FloatReference flowersCount;
 
     private Text flowersText;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         flowersText = GetComponent<Text>();
     }
 

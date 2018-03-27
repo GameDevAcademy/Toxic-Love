@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 /*
- * Responsible for handling the player's input into movement.
+ * Responsible for handling a unit input into movement.
  */
 
 [RequireComponent(typeof(Collider2D))]

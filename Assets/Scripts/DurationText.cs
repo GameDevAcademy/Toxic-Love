@@ -1,16 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class DurationText : MonoBehaviour
+/*
+ * Responsible for displaying the duration text on the UI.
+ */
+public class DurationText : SoundSource
 {
     public FloatReference levelDuration;
 
     private Text durationText;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         durationText = GetComponent<Text>();
     }
 

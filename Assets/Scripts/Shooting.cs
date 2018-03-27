@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * Responsible for player shooting.
+ * Responsible for handling the player's shooting.
  */
 
 public class Shooting : MonoBehaviour
@@ -14,27 +14,34 @@ public class Shooting : MonoBehaviour
     private float currentFire;
     private bool reloading;
 
+    private Vector2 currentMouseDirection;
+
     private void Update()
     {
+        // Points the gun towards the mouse.
         PointGun();
 
+        // Shoot if the player clicks.
         if (Input.GetMouseButton(0))
             HandleFire();
 
+        // Update the current fire time of the weapon.
         currentFire += Time.deltaTime;
     }
 
     private void PointGun()
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = mousePosition - transform.position;
+        // Get the direction the mouse is now pointing at.
+        UpdateMouseDirection();
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        // Transform the direction into an angle and update it.
+        float angle = Mathf.Atan2(currentMouseDirection.y, currentMouseDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
     }
 
     private void HandleFire()
     {
+        // Check if the player is allowed to fire.
         if (currentFire > fireRate && reloading == false)
             Fire();
         
@@ -42,11 +49,18 @@ public class Shooting : MonoBehaviour
 
     private void Fire()
     {
+        // Reset the currentFire time.
         currentFire = 0f;
+
+        // Spawn the bullet and shoot towards the mouse.
         Bullet bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+        bullet.Fire(currentMouseDirection);
+    }
 
+    private void UpdateMouseDirection()
+    {
+        // Update the mouse direction based on the mouse and current point.
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        bullet.Fire(mousePosition - transform.position);
+        currentMouseDirection = mousePosition - transform.position;
     }
 }

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-/*
+﻿/*
  * Responsible for sending the object to the player when collected.
  */
 

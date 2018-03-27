@@ -8,15 +8,17 @@ using UnityEngine;
 
 public class OneTimePlayerTrigger : PlayerTrigger
 {
+    // Was this event already triggered?
     private bool triggered = false;
 
     protected override void OnPlayerOverlap()
     {
-        base.OnPlayerOverlap();
-
         if(triggered == false)
         {
+            // Set the trigger.
             triggered = true;
+
+            // Generate the event.
             OnPlayerUniqueOverlap();
         }
     }

@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1257985331431432}
   m_IsPrefabParent: 1
+--- !u!1 &1201633744633870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4845356965889348}
+  - component: {fileID: 114941912929133834}
+  m_Layer: 0
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1257985331431432
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,6 +107,7 @@ Transform:
   - {fileID: 4663695512096416}
   - {fileID: 4608706609651744}
   - {fileID: 4715808591802580}
+  - {fileID: 4845356965889348}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -132,6 +149,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4553869013024962}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4845356965889348
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1201633744633870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4553869013024962}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50062446829739354
 Rigidbody2D:
@@ -247,6 +277,14 @@ MonoBehaviour:
     UseConstant: 1
     ConstantValue: 1.5
     Variable: {fileID: 0}
+  playerHp:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 02b139e786a341244b9668adcd71fd32, type: 2}
+  attackDamage:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 4c570aaa18e3635459a73d998f92b340, type: 2}
 --- !u!114 &114350579922605514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,6 +300,21 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 3802ce5ac74e9c34eb7ba59aaa0b4832, type: 2}
+--- !u!114 &114941912929133834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1201633744633870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 750fc25548f85ea4aa87009f584fec44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackDamage:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 0}
 --- !u!212 &212121032051741520
 SpriteRenderer:
   m_ObjectHideFlags: 1
