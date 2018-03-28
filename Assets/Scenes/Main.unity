@@ -2624,7 +2624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfdd45da40159004c91a35eb12fa7f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 0
+  priority: 50
   levelDuration:
     UseConstant: 0
     ConstantValue: 0
@@ -3290,11 +3290,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 114224083757226446, guid: bc3b293a625c92846836dd78b0e21d0b,
-        type: 2}
-      propertyPath: groundCheck
-      value: 
-      objectReference: {fileID: 1554173950}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc3b293a625c92846836dd78b0e21d0b, type: 2}
   m_IsPrefabParent: 0
@@ -4247,11 +4242,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4402783635578280, guid: 551db89546d95cf4588860060a6682f1,
     type: 2}
   m_PrefabInternal: {fileID: 1527012410}
---- !u!4 &1554173950 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4572144133133878, guid: bc3b293a625c92846836dd78b0e21d0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1134628616}
 --- !u!1001 &1569627456
 Prefab:
   m_ObjectHideFlags: 0
@@ -4718,6 +4708,15 @@ Prefab:
     - target: {fileID: 4905771172505962, guid: a1d1f59d43dd77d45adfcf8578b84316, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 223993227303496946, guid: a1d1f59d43dd77d45adfcf8578b84316,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261538016168136, guid: a1d1f59d43dd77d45adfcf8578b84316, type: 2}
+      propertyPath: m_Name
+      value: Lose Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1d1f59d43dd77d45adfcf8578b84316, type: 2}

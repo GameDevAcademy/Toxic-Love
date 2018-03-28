@@ -35,15 +35,16 @@ public class Shooting : MonoBehaviour
         UpdateMouseDirection();
 
         // Transform the direction into an angle and update it.
+        float angle = Mathf.Atan2(currentMouseDirection.y, currentMouseDirection.x) * Mathf.Rad2Deg;
 
-        if(currentMouseDirection.x > 0)
+        // Rotate the gun based on the current flipped side.
+        if (currentMouseDirection.x > 0)
         {
-            float angle = Mathf.Atan2(currentMouseDirection.y, currentMouseDirection.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
         }
+
         else
         {
-            float angle = Mathf.Atan2(currentMouseDirection.y, currentMouseDirection.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle + 180f));
         }
         
