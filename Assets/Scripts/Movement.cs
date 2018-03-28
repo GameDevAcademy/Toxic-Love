@@ -170,6 +170,7 @@ public class Movement : MonoBehaviour
         size.y = size.y - crouchHeight;
         collider.size = size;
 
+        anim.SetBool("Crouched", true);
         movementSpeed.CurrentValue = movementSpeed.CurrentValue - crouchSlow.CurrentValue;
     }
 
@@ -179,6 +180,7 @@ public class Movement : MonoBehaviour
         size.y = size.y + crouchHeight;
         collider.size = size;
 
+        anim.SetBool("Crouched", false);
         movementSpeed.CurrentValue = movementSpeed.CurrentValue + crouchSlow.CurrentValue;
     }
     #endregion
