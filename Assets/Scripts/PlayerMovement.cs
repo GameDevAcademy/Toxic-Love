@@ -12,11 +12,12 @@ public class PlayerMovement : Movement
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
 
+        HandleSpriteDirectionWithMouse();
+
         HandleMovement(horizontalInput);
 
         HandleJump(verticalInput);
 
         HandleCrouch(verticalInput);
     }
-
 }

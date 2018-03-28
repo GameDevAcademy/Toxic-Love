@@ -717,6 +717,7 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 33a716f4ac96c714dbd910ead727233d, type: 2}
+  weapon: {fileID: 114452666029182992}
   groundCheck: {fileID: 4731131100193218}
 --- !u!114 &114452666029182992
 MonoBehaviour:

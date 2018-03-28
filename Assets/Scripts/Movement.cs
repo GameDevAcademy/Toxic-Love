@@ -86,26 +86,30 @@ public class Movement : MonoBehaviour
     }
     #endregion
 
-    #region Movement
-
-    protected void HandleMovement(float horizontalInput)
+    #region Flips
+    protected void HandleSpriteDirectionWithInput(float horizontalInput)
     {
         // Check if a sprite flip is needed now.
-        CheckForMeshFlip(horizontalInput);
+        bool direction = horizontalInput > 0f;
 
-        // Update the player's rb to move the character.
-        rb.velocity = new Vector2(horizontalInput * movementSpeed * Time.deltaTime, rb.velocity.y);
-
-        // Update the player's animation according to the input.
-        anim.SetBool("Running", (Mathf.Abs(horizontalInput) > 0f));
+        CheckForMeshFlip(direction);
     }
 
-    private void CheckForMeshFlip(float horizontalInput)
+    protected void HandleSpriteDirectionWithMouse()
+    {
+        // Check if a sprite flip is needed now.
+        Vector2 mouseInWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        bool direction = (transform.position.x > mouseInWorldPosition.x);
+
+        CheckForMeshFlip(direction);
+    }
+
+    private void CheckForMeshFlip(bool newFacingRight)
     {
         // If the direction the player is facing and the input are opposite, flip the sprite.
-        if (horizontalInput < 0 && facingRight)
+        if (newFacingRight && facingRight)
             FlipMesh();
-        else if (horizontalInput > 0 && !facingRight)
+        else if (!newFacingRight && !facingRight)
             FlipMesh();
     }
 
@@ -122,6 +126,17 @@ public class Movement : MonoBehaviour
 
         // Update the mesh of the animator.
         anim.transform.localScale = currentScale;
+    }
+    #endregion
+
+    #region Movement
+    protected void HandleMovement(float horizontalInput)
+    {
+        // Update the player's rb to move the character.
+        rb.velocity = new Vector2(horizontalInput * movementSpeed * Time.deltaTime, rb.velocity.y);
+
+        // Update the player's animation according to the input.
+        anim.SetBool("Running", (Mathf.Abs(horizontalInput) > 0f));
     }
 
     #endregion

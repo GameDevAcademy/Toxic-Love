@@ -32,7 +32,9 @@ public class EnemyMovement : Movement
         {
             Attack();
         }
-        
+
+        HandleSpriteDirectionWithInput(horizontalInput);
+
         HandleMovement(horizontalInput);
     }
 
