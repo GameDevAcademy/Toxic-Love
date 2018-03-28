@@ -13,3 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: The current HP of the player.
   defaultValue: 100
+  valueEvents:
+  - Value: 0
+    eventToRaise: {fileID: 11400000, guid: 1e11db79134db6e4c80cf5acdd462434, type: 2}

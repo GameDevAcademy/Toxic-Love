@@ -11,7 +11,7 @@ public class FloatVariable : ScriptableObject
 
     [SerializeField] private float defaultValue;
 
-    [SerializeField] private List<EventToRaiseAtValue<float>> valueEvents = new List<EventToRaiseAtValue<float>>();
+    [SerializeField] private List<FloatEventToRaiseAtValue> valueEvents = new List<FloatEventToRaiseAtValue>();
 
     private float currentValue;
 
@@ -31,7 +31,7 @@ public class FloatVariable : ScriptableObject
 
     private void OnVariableChanged()
     {
-        foreach (EventToRaiseAtValue<float> valueEvent in valueEvents)
+        foreach (FloatEventToRaiseAtValue valueEvent in valueEvents)
             valueEvent.CheckEvent(CurrentValue);
     }
 }
@@ -47,4 +47,10 @@ public class EventToRaiseAtValue<T> where T : IComparable
         if (CurrentValue.CompareTo(Value) == 0)
             eventToRaise.Raise();
     }
+}
+
+[Serializable]
+public class FloatEventToRaiseAtValue : EventToRaiseAtValue<float>
+{
+
 }
