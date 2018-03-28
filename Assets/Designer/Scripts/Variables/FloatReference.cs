@@ -1,31 +1,13 @@
-﻿using System;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
 
 [Serializable]
-public class FloatReference
+public class FloatReference : GenericReference<float, FloatVariable>
 {
-    public bool UseConstant = true;
-    public float ConstantValue;
-    public FloatVariable Variable;
-
-    public FloatReference(float value)
+    public FloatReference(float value) : base(value)
     {
-        UseConstant = true;
-        ConstantValue = value;
-    }
 
-    public float CurrentValue
-    {
-        get { return UseConstant ? ConstantValue : Variable.CurrentValue; }
-        set {
-            if (UseConstant)
-                ConstantValue = value;
-            else
-                Variable.CurrentValue = value;
-        }
-    }
-
-    public static implicit operator float(FloatReference reference)
-    {
-        return reference.CurrentValue;
     }
 }

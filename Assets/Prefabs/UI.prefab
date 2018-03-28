@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 114877923336738470}
   - component: {fileID: 114646758080979772}
   m_Layer: 0
-  m_Name: Lose
+  m_Name: Lose Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ MonoBehaviour:
   flowersCount:
     UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 11400000, guid: d17d145e1fd6b4a4c97e0f8d962f2989, type: 2}
+    Variable: {fileID: 11400000, guid: 7de33b5bd3baca848a8aa4c0be2401bf, type: 2}
 --- !u!114 &114590350415385318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -676,7 +676,7 @@ MonoBehaviour:
   levelDuration:
     UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 11400000, guid: fa18a478c9d0e294a80683d45bf77dcb, type: 2}
+    Variable: {fileID: 11400000, guid: a207602d6b2da8c4a9c06627c3f1473e, type: 2}
 --- !u!114 &114955276642413954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -786,7 +786,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1261538016168136}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}

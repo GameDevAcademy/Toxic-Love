@@ -105,7 +105,7 @@ MonoBehaviour:
   AttackDamage:
     UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 11400000, guid: c13a44aefbb752e40ac7ca39cf987ea6, type: 2}
+    Variable: {fileID: 11400000, guid: 1cdec538473f48d4284c50994f042f3b, type: 2}
 --- !u!212 &212014305538077862
 SpriteRenderer:
   m_ObjectHideFlags: 1

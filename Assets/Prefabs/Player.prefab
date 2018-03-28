@@ -675,7 +675,7 @@ MonoBehaviour:
   Variable:
     UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 02b139e786a341244b9668adcd71fd32, type: 2}
+    Variable: {fileID: 11400000, guid: 99b8a0cad2eb0304e89313af06c8165c, type: 2}
   Min:
     UseConstant: 1
     ConstantValue: 0
@@ -683,7 +683,7 @@ MonoBehaviour:
   Max:
     UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 1fdaeca249e03364c82140313828af3d, type: 2}
+    Variable: {fileID: 11400000, guid: cdc2b486e45685e428c524b4a541e376, type: 2}
   Image: {fileID: 114916656375081058}
 --- !u!114 &114224083757226446
 MonoBehaviour:
@@ -699,11 +699,11 @@ MonoBehaviour:
   movementSpeed:
     UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 806bb89d5f017ea40a6cad2417944621, type: 2}
+    Variable: {fileID: 11400000, guid: 4dcd9acbdacb74f42a2c1f585a38c772, type: 2}
   jumpForce:
     UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 272c9987b0f44a942a599b1690e6c2f1, type: 2}
+    Variable: {fileID: 11400000, guid: 785435ac2d6d91c45b478e0f8ab17ccd, type: 2}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -712,12 +712,11 @@ MonoBehaviour:
   crouchHeight:
     UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 11400000, guid: f2b54392a4903ec4e9fbce3c30cf4e7f, type: 2}
+    Variable: {fileID: 11400000, guid: f5b032d6888580540ab8e89b8e9d9ffd, type: 2}
   crouchSlow:
     UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 33a716f4ac96c714dbd910ead727233d, type: 2}
-  weapon: {fileID: 114452666029182992}
+    Variable: {fileID: 11400000, guid: f06ed9acf08938f4780686fa1d860091, type: 2}
   groundCheck: {fileID: 4731131100193218}
 --- !u!114 &114452666029182992
 MonoBehaviour:
