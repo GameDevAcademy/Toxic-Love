@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4845356965889348}
   - component: {fileID: 114941912929133834}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 70766772904526050}
   - component: {fileID: 50062446829739354}
   - component: {fileID: 114001018864828806}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4715808591802580}
   - component: {fileID: 61587058644195062}
   - component: {fileID: 114350579922605514}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4608706609651744}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4663695512096416}
   - component: {fileID: 212121032051741520}
   - component: {fileID: 95605598665565830}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
