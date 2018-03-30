@@ -6,7 +6,7 @@ using UnityEngine;
  * Responsible for handling the player's shooting.
  */
 
-public class Shooting : MonoBehaviour
+public class Shooting : MouseMono
 {
     public Bullet bulletPrefab;
     public float fireRate;
@@ -14,12 +14,9 @@ public class Shooting : MonoBehaviour
     private float currentFire;
     private bool reloading;
 
-    private Vector2 currentMouseDirection;
-
-    private void Update()
+    protected override void Update()
     {
-        // Points the gun towards the mouse.
-        PointGun();
+        base.Update();
 
         // Shoot if the player clicks.
         if (Input.GetMouseButton(0))
@@ -27,27 +24,6 @@ public class Shooting : MonoBehaviour
 
         // Update the current fire time of the weapon.
         currentFire += Time.deltaTime;
-    }
-
-    private void PointGun()
-    {
-        // Get the direction the mouse is now pointing at.
-        UpdateMouseDirection();
-
-        // Transform the direction into an angle and update it.
-        float angle = Mathf.Atan2(currentMouseDirection.y, currentMouseDirection.x) * Mathf.Rad2Deg;
-
-        // Rotate the gun based on the current flipped side.
-        if (currentMouseDirection.x > 0)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
-        }
-
-        else
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle + 180f));
-        }
-        
     }
 
     private void HandleFire()
@@ -65,13 +41,6 @@ public class Shooting : MonoBehaviour
 
         // Spawn the bullet and shoot towards the mouse.
         Bullet bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-        bullet.Fire(currentMouseDirection);
-    }
-
-    private void UpdateMouseDirection()
-    {
-        // Update the mouse direction based on the mouse and current point.
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        currentMouseDirection = mousePosition - transform.position;
+        bullet.Fire(mouseDirection);
     }
 }
