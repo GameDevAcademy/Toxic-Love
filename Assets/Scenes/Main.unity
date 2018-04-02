@@ -2389,6 +2389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priority: 50
+  loseEvent: {fileID: 11400000, guid: 1e11db79134db6e4c80cf5acdd462434, type: 2}
   levelDuration:
     UseConstant: 0
     ConstantValue: 0
@@ -4650,7 +4651,7 @@ Prefab:
       objectReference: {fileID: 1893895129}
     - target: {fileID: 1146300086660994, guid: d98e26ea0e9d99d47a28dca820aea90a, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 50707167130179038, guid: d98e26ea0e9d99d47a28dca820aea90a,
         type: 2}
