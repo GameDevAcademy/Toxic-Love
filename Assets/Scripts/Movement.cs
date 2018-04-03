@@ -90,7 +90,7 @@ public class Movement : MonoBehaviour
     protected void HandleSpriteDirectionWithInput(float horizontalInput)
     {
         // Check if a sprite flip is needed now.
-        bool direction = horizontalInput > 0f;
+        bool direction = horizontalInput < 0f;
 
         CheckForMeshFlip(direction);
     }
